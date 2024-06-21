@@ -34,4 +34,15 @@ class Libro {
         this.peso = peso;
         this.disponible = disponible;
     }
+    descuento() {
+        let totalDescuento = 0;
+        let descuento = 0.2;
+        if (this.precio > 50) {
+            totalDescuento = this.precio - (this.precio * descuento);
+            console.log(`Precio original: ${this.precio}`);
+            console.log(`Descuento:${this.precio * descuento}`);
+            console.log(`Precio con descuento: ${totalDescuento}`);
+        }
+        return totalDescuento;
+    }
 }
