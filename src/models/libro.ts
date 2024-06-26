@@ -1,4 +1,5 @@
-class Libro {
+
+export class Libro {
     titulo:string = "1984"
     autor:string = "George Orwell";
     genero:string= "Ficción, Ciencia Ficción";
@@ -8,13 +9,13 @@ class Libro {
     isbn: string = "978-0451524935";
     descripcion: string = "Novela distópica que describe una sociedad totalitaria en la que el gobierno controla todos los aspectos de la vida de los ciudadanos.";
     estado: string = "Nuevo";
-    ubicacion:  string =  "Biblioteca central";
-    fecha_publicacion:Date = new Date(1949, 6, 8);
+    ubicacion: string =  "Biblioteca central";
+    fecha:number = 1998;
     editorial: string ="Secker and Warburg";
     paginas:number = 328;
     dimensiones: string = "13.5 x 21.5 x 3.5 cm"
-    peso: string = "450 gramos"
-    disponible:boolean =  true;
+    peso: string = "450 gramos" 
+    disponible:string = "si"
 
     constructor(
         titulo:string,
@@ -27,12 +28,12 @@ class Libro {
         descripcion:string,
         estado:string,
         ubicacion:string,
-        fecha_publicacion:Date,
+        fecha:number,
         editorial:string,
         paginas:number,
         dimensiones:string,
         peso:string,
-        disponible:boolean
+        disponible:string
         ) {
         
         this.titulo = titulo;
@@ -45,12 +46,12 @@ class Libro {
         this.descripcion = descripcion;
         this.estado = estado ;
         this.ubicacion = ubicacion;
-        this.fecha_publicacion =  fecha_publicacion;
+        this.fecha =  fecha;
         this.editorial = editorial ;
         this.paginas = paginas;
         this.dimensiones = dimensiones;
         this.peso = peso;
-        this.disponible = disponible;
+        this.disponible = disponible
       }
 
     

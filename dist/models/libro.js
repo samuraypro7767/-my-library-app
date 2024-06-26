@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Libro = void 0;
 class Libro {
     constructor(titulo, autor, genero, idioma, precio, formato, isbn, descripcion, estado, ubicacion, fecha_publicacion, editorial, paginas, dimensiones, peso, disponible) {
         this.titulo = "1984";
@@ -46,3 +48,4 @@ class Libro {
         return totalDescuento;
     }
 }
+exports.Libro = Libro;
