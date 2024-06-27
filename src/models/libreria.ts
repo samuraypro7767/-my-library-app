@@ -12,21 +12,25 @@ export class Libreria {
         this.descripcion = descripcion
     }
 
-    AgregarLibro(nuevoLibro: any){
+    AgregarLibro(nuevoLibro: Libro ):void{
         this.book.push(nuevoLibro)
         console.log('libro agregado');
     }
 
-    EliminarLibros() {
-
-        let libroEliminado = this.book.pop()
-        console.log('libro eliminado:');
-        console.table(libroEliminado);
-    }
+    EliminarLibro():any {
+        if (this.book.length > 0) {
+          const libroEliminado = this.book.pop();
+          console.log('Libro eliminado:');
+          console.table(libroEliminado);
+        } else {
+          console.log('No hay libros para eliminar');
+        }
+      }
 
     VerLibros() {
         console.log('pila actual de libros');
-        console.table(this.book);
+        console.log(this.book);
     }
 
+   
 }
