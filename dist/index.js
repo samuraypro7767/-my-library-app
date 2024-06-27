@@ -8,6 +8,7 @@ const libreria_1 = require("./models/libreria");
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
 const promptSync = (0, prompt_sync_1.default)();
 const libreria = new libreria_1.Libreria('accion', 'libros de accion');
+const libros = [];
 function AgregarLibro() {
     const titulo = promptSync("Ingrese el título del libro: ");
     const autor = promptSync("Ingrese el autor del libro: ");
@@ -29,24 +30,21 @@ function AgregarLibro() {
     libreria.AgregarLibro(nuevoLibro);
     console.log(`El libro "${titulo}" ha sido agregado a la librería.`);
 }
-function ElimarLibro() {
+function EliminarLibro() {
     libreria.EliminarLibro();
     console.log(`El libro ha sido eliminado de la librería.`);
 }
 function MostrarLibros() {
     libreria.VerLibros();
 }
-function Descuento() {
-}
 function MenuPrincipal() {
-    let menu;
-    menu = 'Menu libreria\n\n';
-    menu += '1: agregar  libro\n';
+    let menu = 'Menu libreria\n\n';
+    menu += '1: Agregar libro\n';
     menu += '2: Eliminar libro\n';
     menu += '3: Mostrar pila de libros\n';
-    menu += '4: Mostrar descuento de libros\n';
-    menu += '5: salir del menu\n';
-    let codigo = parseInt(promptSync(menu));
+    // menu += '4: Mostrar descuento de libros\n';
+    menu += '5: Salir del menú\n';
+    const codigo = parseInt(promptSync(menu));
     return codigo;
 }
 function EjecutarMenuPrincipal() {
@@ -58,19 +56,16 @@ function EjecutarMenuPrincipal() {
                 AgregarLibro();
                 break;
             case 2:
-                ElimarLibro();
+                EliminarLibro();
                 break;
             case 3:
                 MostrarLibros();
-                break;
-            case 4:
-                Descuento();
                 break;
             case 5:
                 console.log("Saliendo del programa");
                 break;
             default:
-                alert("opcion no valida");
+                console.log("Opción no válida");
         }
     } while (codigoIngresado !== 5);
 }

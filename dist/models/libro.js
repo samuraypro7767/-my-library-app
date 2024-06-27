@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Libro = void 0;
 class Libro {
-    constructor(titulo, autor, genero, idioma, precio, formato, isbn, descripcion, estado, ubicacion, fecha, editorial, paginas, dimensiones, peso, disponible) {
+    constructor(titulo = "1984", autor = "George Orwell", genero = "Ficción, Ciencia Ficción", idioma = "Inglés", precio = 25000, formato = "Tapa dura", isbn = "978-0451524935", descripcion = "Novela distópica que describe una sociedad totalitaria en la que el gobierno controla todos los aspectos de la vida de los ciudadanos.", estado = "Nuevo", ubicacion = "Biblioteca central", fecha = 1998, editorial = "Secker and Warburg", paginas = 328, dimensiones = "13.5 x 21.5 x 3.5 cm", peso = "450 gramos", disponible = "si") {
         this.titulo = "1984";
         this.autor = "George Orwell";
         this.genero = "Ficción, Ciencia Ficción";
@@ -36,7 +36,7 @@ class Libro {
         this.peso = peso;
         this.disponible = disponible;
     }
-    descuento() {
+    Descuento() {
         let totalDescuento = 0;
         let descuento = 0.2;
         if (this.precio > 50) {

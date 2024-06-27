@@ -4,6 +4,7 @@ import PromptSync from "prompt-sync";
 
 const promptSync = PromptSync();
 const libreria = new Libreria('accion','libros de accion');
+const libros: Libro[] = [];
 
 
 function AgregarLibro(): void {
@@ -29,30 +30,31 @@ function AgregarLibro(): void {
   libreria.AgregarLibro(nuevoLibro);
   console.log(`El libro "${titulo}" ha sido agregado a la librería.`);
 }
-function ElimarLibro():any {
+
+
+function EliminarLibro():any {
   libreria.EliminarLibro();
   console.log(`El libro ha sido eliminado de la librería.`);
 }
-function MostrarLibros():void {
+
+function MostrarLibros() {
   libreria.VerLibros();
 }
+  
 
-function Descuento(): void {
-}
+
 
 
 function MenuPrincipal(): number {
-  let menu:string
-  menu = 'Menu libreria\n\n'
-  menu += '1: agregar  libro\n'
-  menu += '2: Eliminar libro\n'
-  menu += '3: Mostrar pila de libros\n'
-  menu += '4: Mostrar descuento de libros\n'
-  menu += '5: salir del menu\n'
- 
-  let codigo:number = parseInt(promptSync(menu))
+  let menu: string = 'Menu libreria\n\n';
+  menu += '1: Agregar libro\n';
+  menu += '2: Eliminar libro\n';
+  menu += '3: Mostrar pila de libros\n';
+  // menu += '4: Mostrar descuento de libros\n';
+  menu += '5: Salir del menú\n';
 
-  return codigo
+  const codigo: number = parseInt(promptSync(menu));
+  return codigo;
 }
 
 function EjecutarMenuPrincipal(): void {
@@ -64,23 +66,18 @@ function EjecutarMenuPrincipal(): void {
         AgregarLibro();
         break;
       case 2:
-        ElimarLibro();
+        EliminarLibro();
         break;
       case 3:
         MostrarLibros();
-        break;
-      case 4:
-        Descuento();
         break;
       case 5:
         console.log("Saliendo del programa");
         break;
       default:
-        alert("opcion no valida");
+        console.log("Opción no válida");
     }
-  } while (codigoIngresado!== 5 );
+  } while (codigoIngresado !== 5);
 }
-
-
 
 EjecutarMenuPrincipal();

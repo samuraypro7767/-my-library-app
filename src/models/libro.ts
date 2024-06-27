@@ -18,22 +18,22 @@ export class Libro {
     disponible:string = "si"
 
     constructor(
-        titulo:string,
-        autor:string,
-        genero:string,
-        idioma:string,
-        precio:number,
-        formato:string,
-        isbn:string,
-        descripcion:string,
-        estado:string,
-        ubicacion:string,
-        fecha:number,
-        editorial:string,
-        paginas:number,
-        dimensiones:string,
-        peso:string,
-        disponible:string
+      titulo:string = "1984",
+      autor:string = "George Orwell",
+      genero:string= "Ficción, Ciencia Ficción",
+      idioma: string="Inglés",
+      precio: number = 25000,
+      formato: string = "Tapa dura",
+      isbn: string = "978-0451524935",
+      descripcion: string = "Novela distópica que describe una sociedad totalitaria en la que el gobierno controla todos los aspectos de la vida de los ciudadanos.",
+      estado: string = "Nuevo",
+      ubicacion: string =  "Biblioteca central",
+      fecha:number = 1998,
+      editorial: string ="Secker and Warburg",
+      paginas:number = 328,
+      dimensiones: string = "13.5 x 21.5 x 3.5 cm",
+      peso: string = "450 gramos" ,
+      disponible:string = "si"
         ) {
         
         this.titulo = titulo;
@@ -54,8 +54,7 @@ export class Libro {
         this.disponible = disponible
       }
 
-    
-      descuento(): number {
+      Descuento(): number {
         let totalDescuento : number = 0; 
         let descuento : number = 0.2;
         if (this.precio > 50) {
