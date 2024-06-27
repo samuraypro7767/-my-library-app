@@ -1,31 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Libreria = void 0;
 class Libreria {
-    constructor(nombre, direccion, tel, book) {
+    constructor(nombre, descripcion) {
+        this.book = [];
         this.nombre = nombre;
-        this.direccion = direccion;
-        this.tel = tel;
-        this.book = book;
+        this.descripcion = descripcion;
     }
-    AgregarLibro() {
-        let nuevoLibro = {
-            titulo: prompt('titulo'),
-            autor: prompt('autor'),
-            genero: prompt('genero'),
-            idioma: prompt('idioma'),
-            precio: prompt('precio'),
-            formato: prompt('formato'),
-            isbn: prompt('isbn'),
-            drescripcion: prompt('drescripcion'),
-            estado: prompt('estado'),
-            ubicacion: prompt('ubicacion'),
-            fecha: prompt('fecha'),
-            editorial: prompt('editorial'),
-            paginas: prompt('paginas'),
-            dimensiones: prompt('dimensiones'),
-            peso: prompt('peso')
-        };
+    AgregarLibro(nuevoLibro) {
         this.book.push(nuevoLibro);
+        console.log('libro agregado');
+    }
+    EliminarLibros() {
+        let libroEliminado = this.book.pop();
+        console.log('libro eliminado:');
+        console.table(libroEliminado);
+    }
+    VerLibros() {
+        console.log('pila actual de libros');
         console.table(this.book);
     }
 }
+exports.Libreria = Libreria;

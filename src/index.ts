@@ -26,7 +26,78 @@ function AgregarLibro() {
   almacen.AgregarLibro(nuevoLibro);
   console.log(`El libro ${titulo} ha sido agregado a la librería.`)
 }
+function ElimarLibro():void {
+  
+}
+function MostrarLibros():void {
+  
+}
 
 
+function MenuPrincipal(): number {
+  let menu:string
+  menu = 'Menu libreria\n\n'
+  menu += '1: agregar  libro\n'
+  menu += '2: Eliminar libro\n'
+  menu += '3: Mostrar pila de libros\n'
+ 
+  let codigo:number = parseInt(promptSync(menu))
 
-AgregarLibro();
+  return codigo
+}
+
+function EjecutarMenuPrincipal() {
+  let codigoIngresado = MenuPrincipal();
+  switch (codigoIngresado) {
+  case 1:
+      
+      AgregarLibro();
+       EjecutarMenu();
+      break;
+  case 2:
+      ElimarLibro();
+       EjecutarMenu();
+      break;
+  case 3:
+      MostrarLibros();
+       EjecutarMenu();
+      break;
+ 
+  default: 
+      false;
+      break;
+
+  }
+}
+function MenuValidacion(): number {
+  let menu = 'Desea continuar en el menu\n\n';
+  menu += '1: si\n';
+  menu += '2: no\n\n';
+  menu += 'Elija una opcion: ';
+  let codigo:number = parseInt(promptSync(menu));
+
+  return codigo;
+}
+
+function EjecutarMenu(): void {
+  let continuar:boolean = true;
+
+  while (continuar) {
+    let codigo = MenuValidacion();
+    switch (codigo) {
+      case 1:
+        EjecutarMenuPrincipal();
+        break;
+      case 2:
+        alert('Salio del menu');
+        continuar = false;
+        break;
+      default:
+        alert('Opcion no valida. Intente de nuevo.');
+        break;
+    }
+  }
+}
+
+
+EjecutarMenuPrincipal();
